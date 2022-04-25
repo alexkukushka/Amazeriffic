@@ -1,5 +1,5 @@
 body {
-    background: #f9e933;
+    background-color: #f9e933;
 }
 
 header,
@@ -17,8 +17,46 @@ footer .container {
 
 header {
     background: white;
+    overflow: auto;
 }
 
 main {
     background: white;
+    overflow: auto;
+}
+
+footer {}
+
+header h1 {
+    float: left;
+    width: 570px;
+}
+
+header nav {
+    float: right;
+    width: 285px;
+}
+
+main .description {
+    float: left;
+    width: 570px;
+}
+
+main .picture {
+    float: right;
+    width: 285px;
+}
+
+.lightbulb {
+    width: 160px;
+}
+
+footer .contact {
+    float: left;
+    width: 570px;
+}
+
+footer .sitemap {
+    float: right;
+    width: 285px;
 }
