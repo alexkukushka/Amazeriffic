@@ -1,5 +1,6 @@
 body {
     background-color: #f9e933;
+    font-family: 'Droid Sans', sans-serif;
 }
 
 header,
@@ -24,8 +25,6 @@ main {
     background: white;
     overflow: auto;
 }
-
-footer {}
 
 header h1 {
     float: left;
@@ -59,4 +58,11 @@ footer .contact {
 footer .sitemap {
     float: right;
     width: 285px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Ubuntu', sans-serif;
 }
