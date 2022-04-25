@@ -19,12 +19,12 @@ footer .container {
 
 header {
     background: white;
-    overflow: auto;
+    overflow: hidden;
 }
 
 main {
     background: white;
-    overflow: auto;
+    overflow: hidden;
 }
 
 header h1 {
@@ -49,6 +49,7 @@ main .picture {
 }
 
 .lightbulb {
+    float: right;
     width: 160px;
 }
 
@@ -70,13 +71,25 @@ h4 {
 }
 
 main h2 {
+    line-height: 2em;
     font-size: 1.5em;
 }
 
 main h3 {
+    line-height: 2em;
     font-size: 1.25em;
 }
 
 footer h5 {
+    line-height: 3em;
     font-size: 1.25em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
 }
