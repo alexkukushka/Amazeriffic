@@ -1,4 +1,4 @@
-var main = function() {
+/*var main = function() {
     "use strict";
     $(".tabs a:nth-child(1)").on("click", function() {
         //делаем все вкладки неактивными
@@ -9,7 +9,7 @@ var main = function() {
         $("main .content").empty();
         //возвращается false, так как мы не переходим по ссылке
         return false;
-    })
+    });
     $(".tabs a:nth-child(2)").on("click", function() {
         $(".tabs span").removeClass("active");
         $(".tabs a:nth-child(2) span").addClass("active");
@@ -22,4 +22,27 @@ var main = function() {
         $("main .content").empty();
         return false;
     });
+};*/
+
+var main = function() {
+    "use strict";
+    var makeTabActive = function(tabNumber) {
+        //сконструируем селектор из tabNumber
+        var tabSelector = ".tabs a:nth-child(" + tabNumber + ") span";
+        $(".tabs span").removeClass("active");
+        $(tabSelector).addClass("active");
+    };
+    $(".tabs a:nth-child(1)").on("click", function() {
+        makeTabActive(1);
+        return false;
+    });
+    $(".tabs a:nth-child(2)").on("click", function() {
+        makeTabActive(2);
+        return false;
+    });
+    $(".tabs a:nth-child(3)").on("click", function() {
+        makeTabActive(3);
+        return false;
+    });
+
 };
