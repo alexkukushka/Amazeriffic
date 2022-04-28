@@ -1,13 +1,8 @@
-var main = function() {
+var main = function(toDoObjects) {
     "use strict";
-    var toDos = [
-        "Закончить писать эту книгу",
-        "Вывести Грейси на прогулку в парк",
-        "Ответить на электронные письма",
-        "Подготовиться к лекции в понедельник",
-        "Обновить несколько новых задач",
-        "Купить продукты"
-    ];
+    var toDos = toDoObjects.map(function(toDo) {
+        return toDo.description;
+    });
     $(".tabs a span").toArray().forEach(function(element) {
         $(element).on("click", function() {
             var $element = $(element),
@@ -28,12 +23,31 @@ var main = function() {
                 });
                 $("main .content").append($content);
             } else if ($element.parent().is(":nth-child(3)")) {
+                var organizedByTag = tagOrg(toDoObjects);
+                organizedByTag.forEach(function(tag) {
+
+                    var $content = $("<ul>");
+                    var $tagName = $("<p>").text(tag.name);
+
+                    tag.todos.forEach(function(description) {
+                        var $li = $("<li>").text(description);
+                        $content.append($li);
+                    });
+
+                    $("main .content").append($tagName);
+                    $("main .content").append($content);
+                });
+
+                console.log("раиль лучший")
+
+            } else if ($element.parent().is(":nth-child(4)")) {
                 var $input = $("<input>");
                 var $button = $("<button>").text("Добавить задачу");
                 $button.on("click", function() {
                     toDos.push($input.val());
                     $input.val("");
                 });
+
                 $content = $("<div>").append($input).append($button);
                 $("main .content").append($content);
 
@@ -44,4 +58,30 @@ var main = function() {
     $(".tabs a:first-child span").trigger("click");
 };
 
-$(document).ready(main);
+var tagOrg = function(toDoObjects) {
+    var tagList = [],
+        tagsObject = [];
+    toDoObjects.forEach(function(todo) {
+        todo.tags.forEach(function(tag) {
+            if (tagList.includes(tag)) {
+                tagsObject[tagList.indexOf(tag)].todos.push(todo.description);
+            } else {
+                tagList.push(tag);
+                tagsObject.push({ "name": tag, "todos": [todo.description] });
+            }
+        });
+    });
+    return tagsObject;
+};
+
+
+$(document).ready(function() {
+    $.getJSON("../json/todos.json", function(toDoObjects) {
+        // вызов функции main с аргументом в виде объекта toDoObjects
+        main(toDoObjects);
+    });
+});
+
+
+
+//"C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files
