@@ -108,15 +108,16 @@ a:hover {
     background: #eee;
 }
 
-.content {
-    /* padding: 0 20px 20px 20px; */
+
+/* .content {
+     padding: 0 20px 20px 20px; 
     overflow: auto;
     background: lightgray;
     width: 855px;
     text-align: center;
 }
 
-.content div {
+/* .content div {
     margin: 10px 0;
     padding: 10px 20px 10px 10px;
 }
@@ -127,22 +128,24 @@ a:hover {
     margin: 10px;
     font-size: 20px;
     padding: 10px;
-}
+} */
 
-.content p {
+
+/* .content p {
     padding: 15px;
     padding-bottom: 7px;
     font-size: 20px;
-}
+} */
 
-.content input {
+
+/* .content input {
     font-family: Ubuntu;
     width: auto;
     margin: 17px;
     margin-left: 0%;
     padding: 8px;
     font-size: 17px;
-}
+} */
 
 .content h3 {
     margin: px;
@@ -154,10 +157,45 @@ a:hover {
     padding-top: 2%;
 }
 
-.content button {
+
+/* .content button {
     font-family: 'Ubuntu', sans-serif;
     margin: 17px;
     margin-bottom: 17px;
     padding: 8px;
     font-size: 17px;
+} */
+
+.content {
+    padding: 0 20px 20px 20px;
+    overflow: auto;
+    background: #ddd;
+}
+
+.content li {
+    margin: 10px 0;
+    padding: 10px 20px 10px 10px;
+    background: white;
+}
+
+.content div {
+    margin: 10px 0;
+    padding: 10px 20px 10px 10px;
+}
+
+.content button {
+    padding: 7px 10px 7px 10px;
+    margin: 0 10px;
+    font-size: 17px;
+}
+
+.content input {
+    padding: 7px 10px 7px 10px;
+    font-size: 17px;
+}
+
+.content p {
+    margin: 10px 0;
+    padding: 10px 20px 10px 10px;
+    background: lightgray;
 }

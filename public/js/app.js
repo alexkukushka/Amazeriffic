@@ -38,18 +38,31 @@ var main = function(toDoObjects) {
                     $("main .content").append($content);
                 });
 
-                console.log("раиль лучший")
-
             } else if ($element.parent().is(":nth-child(4)")) {
-                var $input = $("<input>");
+                var $pDesc = $("<p>").text("Описание");
+                var $pTags = $("<p>").text("Теги");
+                var $inputT = $("<input>").addClass("tags");
+                var $input = $("<input>").addClass("descriptionInput");
                 var $button = $("<button>").text("Добавить задачу");
                 $button.on("click", function() {
-                    toDos.push($input.val());
-                    $input.val("");
-                });
+                    var description = $input.val(),
+                        tags = $inputT.val().split(",");
+                    toDoObjects.push({ "description": description, "tags": tags });
 
-                $content = $("<div>").append($input).append($button);
-                $("main .content").append($content);
+                    toDos = toDoObjects.map(function(toDo) {
+                        return toDo.description;
+                    });
+
+                    $input.val("");
+                    $inputT.val("");
+
+                });
+                $("main .content").append($pDesc);
+                $("main .content").append($input);
+                $("main .content").append($pTags);
+                $("main .content").append($inputT);
+
+                $("main .content").append($button);
 
             }
             return false;
