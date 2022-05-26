@@ -148,9 +148,9 @@ a:hover {
 } */
 
 .content h3 {
-    margin: px;
+    margin: 10px;
     float: left;
-    width: 220px;
+    width: 380px;
     text-align: right;
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
@@ -170,6 +170,7 @@ a:hover {
     padding: 0 20px 20px 20px;
     overflow: auto;
     background: #ddd;
+    width: 750px;
 }
 
 .content li {
@@ -190,7 +191,10 @@ a:hover {
 }
 
 .content input {
-    padding: 7px 10px 7px 10px;
+    width: auto;
+    margin: 17px;
+    margin-left: 0%;
+    padding: 8px;
     font-size: 17px;
 }
 
@@ -198,4 +202,58 @@ a:hover {
     margin: 10px 0;
     padding: 10px 20px 10px 10px;
     background: lightgray;
+}
+
+.linkRemove {
+    display: inline-block;
+    float: right;
+    font-size: 13px;
+    margin-top: 2px;
+    padding-left: 10px;
+}
+
+.linkEdit {
+    display: inline-block;
+    float: right;
+    font-size: 13px;
+    margin-top: 2px;
+    padding-left: 15px;
+}
+
+.content a {
+    color: #FF0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main .authorization {
+    max-width: 1200px;
+    background: #ddd;
+    margin: auto;
+    border-radius: 5px;
+}
+
+main .authorization input {
+    font-family: Ubuntu;
+    margin: 10px;
+    font-size: 18px;
+    padding: 5px;
+    padding-right: 60px;
+}
+
+main .authorization button {
+    font-family: Ubuntu;
+    top: 50px;
+    left: 50px;
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    float: right;
+}
+
+main .authorization p {
+    padding: 15px;
+    padding-bottom: 0px;
+    font-size: 20px;
 }
